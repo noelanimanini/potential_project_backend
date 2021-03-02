@@ -6,7 +6,7 @@ class CardStacksController < ApplicationController
     end 
 
     def create 
-        cardstack = CardStack.create(card_params)
+        cardstack = CardStack.create(title: card_params["title"], user_id: decoded_token[0]["user_id"], description: card_params["description"])
         render json: cardstack, status: 201
     end 
 

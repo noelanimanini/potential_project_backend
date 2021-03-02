@@ -7,15 +7,16 @@ class AuthController < ApplicationController
 
         if @user && @user.authenticate(params[:password])
             my_token = encode_token({user_id: @user.id})
-
-            render json: {id: @user.id, username: @user.username, token: my_token}
+            cardstacks = CardStack.where(user_id: @user.id)
+            render json: {id: @user.id, username: @user.username, token: my_token, card_stack: cardstacks}
         else 
             render json: {error: 'That user could not be found'}, status: 401
         end 
     end 
 
     def show
-      render json: {id: @user.id, username: @user.username}
+      cardstacks = CardStack.where(user_id: @user.id)
+      render json: {id: @user.id, username: @user.username, card_stack: cardstacks}
     end
 
 end 
