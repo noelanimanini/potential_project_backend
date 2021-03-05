@@ -20,6 +20,12 @@ class UsersController < ApplicationController
           render json: {error: 'failed to create a user'}
         end 
       end
+
+      def destroy 
+        @user = User.find(params[:id])
+        @user.destroy
+        render json: {message: 'this user was deleted!'}
+      end 
     
       private
     

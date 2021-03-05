@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :card_stacks 
   resources :body_parts, only: [:index]
   
-  resources :users, only: [:create, :index]
+  resources :users, only: [:create, :index, :destroy]
     post 'login', to: "auth#create"
     post '/signup', to: 'users#create'
     get 'persist', to: "auth#show"
