@@ -1,29 +1,37 @@
 class StudyGroupsController < ApplicationController
+  skip_before_action :authorized, only: [:create, :destroy, :update, :index]
     def index
         # studygroups = StudyGroup.where(user_id: @user.id) || 
         
-        studygroups = StudyGroup.all
-        render json: studygroups, status: 200
+        study_groups = StudyGroup.all
+        render json: study_groups, status: 200
+    end 
+
+    def create
+      study_group = StudyGroup.create(study_params)
+      render json: study_group, status: 200
     end 
 
     def update
-        @studygroup.update(study_params)
-        render json: @studygroup
+        study_group = StudyGroup.find(params[:id])
+        study_group.update(study_params)
+        render json: study_group
     end 
 
     def show
-        render json: @studygroup, status: 200
+      study_group = StudyGroup.find(params[:id])
+        render json: study_group, status: 200
     end 
 
     def destroy
-        studygroupId = @studygroup.id
-        @studygroup.destroy
+      study_group = StudyGroup.find(params[:id])
+      study_group.destroy
         render json: {message: "you are no longer apart of this study group"}
     end 
 
     private
 
     def study_params
-        params.permit(:name, :description)
+        params.require(:study_group).permit(:name, :date, :description)
     end 
 end

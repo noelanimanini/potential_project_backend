@@ -31,6 +31,6 @@ class UserBodyPartsController < ApplicationController
     private
 
     def user_body_part_params
-        params.require(:user_body_part).permit(:card_stack_id, :body_part_id)
+        params.require(:user_body_part).permit(:card_stack_id, :body_part_id, :comments)
     end 
 end

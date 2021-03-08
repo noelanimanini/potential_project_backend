@@ -23,7 +23,7 @@ uri = URI.parse('https://apis.biodigital.com/services/v2/content/collections/myh
 req = Net::HTTP::Get.new(uri)
 
 #  Construct the Authorization Header
-req['Authorization'] = "Bearer sUzcw3rNiapCv41Q6vaflb0kaKtBmhBziXv1wx9v"
+req['Authorization'] = "Bearer 4gLZpzeeQNwpL5NL1Uq8104YygPtf3MID84NG3ML"
 req['Accept'] = "application/json"
 
 sock = Net::HTTP.new(uri.host, uri.port)
@@ -49,10 +49,10 @@ CardStack.destroy_all
 c = CardStack.create(title: 'study the Nervous System', user_id: u.id, description: "study this more") 
 
 UserBodyPart.destroy_all
-cr = UserBodyPart.create(card_stack_id: c.id, body_part_id: bp.id)
+cr = UserBodyPart.create(card_stack_id: c.id, body_part_id: bp.id, comments: 'this is the first comment')
 
 StudyGroup.destroy_all 
-sg = StudyGroup.create(name:'lets study anatomy together', description: 'Brain-ios alike!')
+sg = StudyGroup.create(name:'lets study anatomy together', date: DateTime.new(2016, 03, 15, 18, 00, 0),description: 'Brain-ios alike!')
 
 UserStudyGroup.destroy_all
 us = UserStudyGroup.create(study_group_id: sg.id, user_id: u.id)

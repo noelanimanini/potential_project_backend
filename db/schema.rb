@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_200234) do
 
   create_table "study_groups", force: :cascade do |t|
     t.string "name"
+    t.datetime "date"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_200234) do
   create_table "user_body_parts", force: :cascade do |t|
     t.integer "card_stack_id"
     t.integer "body_part_id"
+    t.string "comments"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
