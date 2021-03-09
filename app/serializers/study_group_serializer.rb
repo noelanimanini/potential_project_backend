@@ -1,7 +1,8 @@
 class StudyGroupSerializer < ActiveModel::Serializer
-  attributes :id, :name, :date, :description, :users
+  attributes :id, :name, :date,:description, :users
 
+  has_one :body_part
   def users
-    ActiveModel::SerializableResource.new(object.user_study_groups, each_serializer: UserStudyGroupSerializer)
+    ActiveModelSerializers::SerializableResource.new(object.user_study_groups, each_serializer: UserStudyGroupSerializer)
   end 
 end

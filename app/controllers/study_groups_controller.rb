@@ -32,6 +32,6 @@ class StudyGroupsController < ApplicationController
     private
 
     def study_params
-        params.require(:study_group).permit(:name, :date, :description)
+        params.require(:study_group).permit(:name, :date, :body_part_id,:description)
     end 
 end
