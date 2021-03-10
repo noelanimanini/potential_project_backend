@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :comments
   resources :user_study_groups, only: [:destroy]
   resources :study_groups
   resources :user_body_parts, only: [:destroy, :create, :update]

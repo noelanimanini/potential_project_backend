@@ -25,7 +25,7 @@ class UserBodyPartsController < ApplicationController
     def update
         user_body_part = UserBodyPart.find(params[:id])
         user_body_part.update(user_body_part_params)
-        render json: @user_body_part, status: 200
+        render json: user_body_part, status: 200
     end
 
     private
