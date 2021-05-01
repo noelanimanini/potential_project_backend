@@ -1,24 +1,14 @@
-# README
+# Potential README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Welcome to Potential's backend service! The backend was created with Ruby on Rails. 
 
-Things you may want to cover:
+## Description 
+This service features the backend. This allows us to query and save data from the frontend in Active Record. The backend houses information about the users, body parts, card stacks, study groups, etc. 
 
-* Ruby version
+## Installation 
+Make sure you have the latest version of ruby installed. You need a version 6 or higher. You can type: ```rails --v``` to check your version. 
+Once you have the most updated version, go ahead and clone down this repo. Once cloned down, you can type in your terminal, 
+```rails s```. This will get the backend server running for the frontend. In another terminal or editor window, type ```bundle install```. This will make sure you have all the gems necessary for the application. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Authors and Acknowledgement 
+I want to thank my teacher Emiley Palmquist for taking the time and utmost patience to make sure I understood everything.  
