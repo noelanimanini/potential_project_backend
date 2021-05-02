@@ -23,7 +23,7 @@ uri = URI.parse('https://apis.biodigital.com/services/v2/content/collections/myh
 req = Net::HTTP::Get.new(uri)
 
 #  Construct the Authorization Header
-req['Authorization'] = "Bearer pScbagSTkFGTK6kYXtDf9XUgtGpb2oKUpzcjxoGG "
+req['Authorization'] = "Bearer w1iXLqX7pDaaCJgASSjX5lvLlVBPb4RZHd10jvgg"
 req['Accept'] = "application/json"
 
 sock = Net::HTTP.new(uri.host, uri.port)
